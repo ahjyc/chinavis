@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCF-world</title>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+    
+    <!-- 头部的盒子 -->
+    <header>
+        <h1>2020新冠疫情可视分析系统</h1>
+        <div class="showTime"></div>
+        <script>
+            var t = null;
+            t = setTimeout(time, 1000);//開始运行
+            function time() {
+                clearTimeout(t);//清除定时器
+                dt = new Date();
+                var y = dt.getFullYear();
+                var mt = dt.getMonth() + 1;
+                var day = dt.getDate();
+                var h = dt.getHours();//获取时
+                var m = dt.getMinutes();//获取分
+                var s = dt.getSeconds();//获取秒
+                document.querySelector(".showTime").innerHTML = '当前时间：' + y + "年" + mt + "月" + day + "-" + h + "时" + m + "分" + s + "秒";
+                t = setTimeout(time, 1000); //设定定时器，循环运行     
+            }
+ </script>
+    </header>
+    <!-- 页面主题 -->
+    <div id="light" class="white_content"><button href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">关闭本窗口</button>
+        
+        <div id="main" class="main" style="width: 168.45vh;height:75.15vh;left: 0;">
+           </div>
+    </div> 
+    <div id="fade" class="black_overlay"></div> 
+
+
+
+    <div id="light2" class="white_content"><button href = "javascript:void(0)" onclick = "document.getElementById('light2').style.display='none';document.getElementById('fade2').style.display='none'">关闭本窗口</button>
+        <button id="education" href="javascript:void(0)">各省感染数量与各省教育程度关系</button>
+        <button id="citypopulationrate" href="javascript:void(0)">各省感染数量与各省城镇化率关系</button>
+        <button id="gdp" href="javascript:void(0)">各省感染数量与各省gdp关系</button>
+        <button id="doctor" href="javascript:void(0)">各省卫生水平</button>
+        <div id="main2" class="main2" style="width: 168.45vh;height:75.15vh;left: 0;">
+           </div>
+    </div> 
+    <div id="fade2" class="black_overlay"></div> 
+
+
+    <section class="mainbox">
+        <div class="column">
+            <div class="panel wordcloud">
+                <h2>热搜词云</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+
+            <div class="panel pie">
+                <h2>各省确诊占比</h2>
+                <div class="chart">
+                    
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+
+            <div class="panel line_addout" >
+                <h2>新增人数(本土/境外输入)分布</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+
+
+        
+        <div class="column">
+            <script src="js/jquery.js"></script>
+            <!-- no模块制作 -->
+            <div class="no">
+                <div class="no-hd">
+                    <ul>
+                        <li><a id="totalconfirmed"><script src="js/totalconfirmed.js"></script></a></li>
+                        <li><a id="exsistconfirmed"><script src="js/exsistconfirmed.js"></script></a></li>
+                        <li><a id="curedCount"><script src="js/curedCount.js"></script></a></li>
+                        <li><a id="deadCount"><script src="js/deadCount.js"></script></a></li>
+                    </ul>
+                </div>
+                <div class="no-bd">
+                    <ul>
+                        <li>累计确诊人数</li>
+                        <li>现存确诊人数</li>
+                        <li>治愈总人数</li>
+                        <li>死亡总人数</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 地图模块 -->
+             <div class="map">
+                <h2><a href="javascript:;
+                    ">全国累计确诊分布</a>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'";
+                    >境外输入确诊分布</a></h2>
+                    
+                 <div class="map1"></div>
+                 <div class="map2"></div>
+                 <div class="map3"></div>
+
+
+                 
+                 
+                 <div class="chart">地图模块</div>
+             </div>
+
+        </div>
+
+        <div class="column">
+            <div class="panel bar2">
+                <h2>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('light2').style.display='block';document.getElementById('fade2').style.display='block'";
+                    >城镇化率与确诊数量关系(点击放大)</a></h2></h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+
+            <div class="panel line_province">
+                <h2>境外输入top10省份</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+
+            <div class="panel province">
+                <h2><a href="javascript:;
+                    ">省份疫情人数分布</a>
+                    <a href="javascript:;">死亡率</a>
+                    <a href="javascript:;">感染人数占比</a></h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mainbox">
+        <div class="column">
+            <div class="panel lineprovince">
+                <h2>省份疫情人数变化曲线</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+
+            
+        </div>
+
+
+       
+
+      
+    </section>
+
+    <section class="mainbox">
+        <div class="column">
+            <div class="panel linecountry">
+                <h2><a href="javascript:;
+                    ">全国疫情人数变化曲线</a><a href="javascript:;">全国新增人数堆叠条形图</a></h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+
+            
+        </div>
+
+
+       
+
+      
+    </section>
+    <script src="js/flexible.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/echarts-wordcloud.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/china.js"></script>
+    <script src="js/world.js"></script>
+    <script src="js/data_provinceline.js"></script>
+    <script src="js/provinceCovidData.js"></script>
+
+    <script src="./js/Data/citypopulation.js"></script>
+    <script src="./js/Data/cityrate.js"></script>
+    <script src="./js/Data/gdp.js"></script>
+    <script src="./js/Data/doctor.js"></script>
+    <script src="./js/Data/education.js"></script>
+
+
+
+    <script src="js/province/anhui.js"></script>
+    <script src="js/province/aomen.js"></script>
+    <script src="js/province/beijing.js"></script>
+    <script src="js/province/chongqing.js"></script>
+    <script src="js/province/fujian.js"></script>
+    <script src="js/province/guangdong.js"></script>
+    <script src="js/province/guangxi.js"></script>
+    <script src="js/province/guizhou.js"></script>
+    <script src="js/province/gansu.js"></script>
+    <script src="js/province/hainan.js"></script>
+    <script src="js/province/hebei.js"></script>
+    <script src="js/province/heilongjiang.js"></script>
+    <script src="js/province/henan.js"></script>
+    <script src="js/province/hubei.js"></script>
+    <script src="js/province/hunan.js"></script>
+    <script src="js/province/jiangsu.js"></script>
+    <script src="js/province/jiangxi.js"></script>
+    <script src="js/province/jilin.js"></script>
+    <script src="js/province/liaoning.js"></script>
+    <script src="js/province/neimenggu.js"></script>
+    <script src="js/province/ningxia.js"></script>
+    <script src="js/province/qinghai.js"></script>
+    <script src="js/province/shandong.js"></script>
+    <script src="js/province/shanghai.js"></script>
+    <script src="js/province/shanxi.js"></script>
+    <script src="js/province/shanxi1.js"></script>
+    <script src="js/province/sichuan.js"></script>
+    <script src="js/province/taiwan.js"></script>
+    <script src="js/province/tianjin.js"></script>
+    <script src="js/province/xianggang.js"></script>
+    <script src="js/province/xinjiang.js"></script>
+    <script src="js/province/xizang.js"></script>
+    <script src="js/province/yunnan.js"></script>
+    <script src="js/province/zhejiang.js"></script>
+
+    
+    <script src="js/countryPopulation.js"></script>
+    <script src="js/worldwide_agr.js"></script>
+    <script src="js/indexCHINAVIS.js"></script>
+
+
+    <script src="./js/output/worldZH.js"></script>
+    <script src="./js/output/datas.js"></script>
+    <script src="./js/output/index.js"></script>
+
+
+   
+  
+</body>
+</html>

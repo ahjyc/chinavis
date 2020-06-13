@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCF-world</title>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+    
+    <!-- 头部的盒子 -->
+    <header>
+        <h1>2020全球新冠肺炎疫情可视化</h1>
+        <div class="showTime"></div>
+        <script>
+            var t = null;
+            t = setTimeout(time, 1000);//開始运行
+            function time() {
+                clearTimeout(t);//清除定时器
+                dt = new Date();
+                var y = dt.getFullYear();
+                var mt = dt.getMonth() + 1;
+                var day = dt.getDate();
+                var h = dt.getHours();//获取时
+                var m = dt.getMinutes();//获取分
+                var s = dt.getSeconds();//获取秒
+                document.querySelector(".showTime").innerHTML = '当前时间：' + y + "年" + mt + "月" + day + "-" + h + "时" + m + "分" + s + "秒";
+                t = setTimeout(time, 1000); //设定定时器，循环运行     
+            }
+ </script>
+    </header>
+    <!-- 页面主题 -->
+    <section class="mainbox">
+        <div class="column">
+            <div class="panel line">
+                <h2>疫情人数变化曲线</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+
+            <div class="panel line2">
+                <h2>疫情增长率变化</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+
+            <div class="panel pie" >
+                <h2>七大洲疫情分布比例</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+
+
+        
+        <div class="column">
+            <script src="js/jquery.js"></script>
+            <!-- no模块制作 -->
+            <div class="no">
+                <div class="no-hd">
+                    <ul>
+                        <li><a id="totalconfirmeds_world"><script src="js/totalconfirmed.js"></script></a></li>
+                        <li><a id="exsistconfirmed_world"><script src="js/exsistconfirmed.js"></script></a></li>
+                        <li><a id="curedCount_world"><script src="js/curedCount.js"></script></a></li>
+                        <li><a id="deadCount_world"><script src="js/deadCount.js"></script></a></li>
+                    </ul>
+                </div>
+                <div class="no-bd">
+                    <ul>
+                        <li>累计确诊人数</li>
+                        <li>现存确诊人数</li>
+                        <li>治愈总人数</li>
+                        <li>死亡总人数</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 地图模块 -->
+             <div class="map">
+                 <div class="map1"></div>
+                 <div class="map2"></div>
+                 <div class="map3"></div>
+                 <div class="chart">地图模块</div>
+             </div>
+
+        </div>
+
+        <div class="column">
+            <div class="panel wordcloud">
+                <h2>实时热搜词云</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+
+            <div class="panel bar">
+                <h2>现存确诊人数top10国家</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+
+            <div class="panel bar2">
+                <h2>每百万感染人数top10</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </section>
+    <script src="js/flexible.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/echarts-wordcloud.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/china.js"></script>
+    <script src="js/world.js"></script>
+    <script src="js/countryPopulation.js"></script>
+    <script src="js/worldwide_agr.js"></script>
+    <script src="js/index-world.js"></script>
+</body>
+</html>
