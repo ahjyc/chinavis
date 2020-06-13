@@ -20,7 +20,7 @@ var provinceData = null;
 //省份数据
 $(document).ready(function () {
 
-    $.get("http://api.tianapi.com/txapi/ncovcity/index?key=bf14c571788513bcd8d1923cbbdcd5fd",
+    $.get("https://api.tianapi.com/txapi/ncovcity/index?key=bf14c571788513bcd8d1923cbbdcd5fd",
         function (data, status) {
             provinceData = data.newslist;
             console.log(provinceData);
@@ -149,7 +149,7 @@ console.log(data_provinceline.data_provinceline);
 
 (function () {
 
-    $.get("http://api.tianapi.com/txapi/weibohot/index?key=bf14c571788513bcd8d1923cbbdcd5fd",
+    $.get("https://api.tianapi.com/txapi/weibohot/index?key=bf14c571788513bcd8d1923cbbdcd5fd",
         function (data, status) {
             //console.log(data);
             var wordclouddata = [];
@@ -1662,7 +1662,7 @@ function showAbroad_Local(province) {
 //分布
 $(document).ready(function () {
 
-    $.get("http://api.tianapi.com/txapi/ncovcity/index?key=bf14c571788513bcd8d1923cbbdcd5fd",
+    $.get("https://api.tianapi.com/txapi/ncovcity/index?key=bf14c571788513bcd8d1923cbbdcd5fd",
         function (data, status) {
             showCity("湖北");
             showProvinceLine("湖北");
@@ -1796,7 +1796,7 @@ $(document).ready(function () {
 
 //城镇化
 function ShowCityRareRelationship(){
-    // $.get("http://api.tianapi.com/txapi/ncovcity/index?key=bf14c571788513bcd8d1923cbbdcd5fd",
+    // $.get("https://api.tianapi.com/txapi/ncovcity/index?key=bf14c571788513bcd8d1923cbbdcd5fd",
     // function (data, status) {
     //     console.log(data);
     //     var provinceData=data.newslist;
@@ -1967,7 +1967,7 @@ function ShowCityRareRelationship(){
 (function(){
     console.log(cityrate);
     
-    $.get("http://api.tianapi.com/txapi/ncovcity/index?key=bf14c571788513bcd8d1923cbbdcd5fd",
+    $.get("https://api.tianapi.com/txapi/ncovcity/index?key=bf14c571788513bcd8d1923cbbdcd5fd",
     function (data, status) {
         console.log(data);
         var provinceData=data.newslist;
@@ -2110,7 +2110,7 @@ function ShowCityRareRelationship(){
 //城镇化与确诊感染关系
 (function(){
     
-    $.get("http://api.tianapi.com/txapi/ncovcity/index?key=bf14c571788513bcd8d1923cbbdcd5fd",
+    $.get("https://api.tianapi.com/txapi/ncovcity/index?key=bf14c571788513bcd8d1923cbbdcd5fd",
     function (data, status) {
         console.log(data);
         var provinceData=data.newslist;
@@ -2705,7 +2705,7 @@ function showMedical(){
 //境外输入详情页面板
 
 (function(){
-    $.get("http://api.tianapi.com/txapi/ncovcity/index?key=bf14c571788513bcd8d1923cbbdcd5fd",
+    $.get("https://api.tianapi.com/txapi/ncovcity/index?key=bf14c571788513bcd8d1923cbbdcd5fd",
     function(data,status){
        // console.log(data);
         var PD=data.newslist;
