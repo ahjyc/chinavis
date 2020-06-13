@@ -149,7 +149,7 @@ console.log(data_provinceline.data_provinceline);
 
 (function () {
 
-    $.get("https://api.tianapi.com/txapi/weibohot/index?key=bf14c571788513bcd8d1923cbbdcd5fd",
+    $.get("http://api.tianapi.com/txapi/weibohot/index?key=bf14c571788513bcd8d1923cbbdcd5fd",
         function (data, status) {
             //console.log(data);
             var wordclouddata = [];
